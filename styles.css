@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e8d5b7;
+    font-size: 24px;
+  }
+
+  .main-wrapper {
+    background-color: #0e2430;
+    color:#e8d5b7;
+    border: 1px solid #e8d5b7;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+  }
+
+  .wrapper{
+    border: 1px solid #e8d5b7;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 20px;
+    background-color: #f5b349;
+    color: #fc3a51;
+    /*background-color: #fc3a51;*/
+  }
