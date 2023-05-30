@@ -18,10 +18,10 @@ body {
     margin: 1rem;
     padding-bottom: 1rem;
     border-radius: 20px;
-    background-color: #f5b349;
+    background-color: #e6b15a;
     box-shadow: 10px 10px 10px #0e2430;
     color: #0e2430;
-    border: 5px inset #fc3a51;
+    border: 5px solid #ce5765;
   }
 
   button {
@@ -35,7 +35,7 @@ body {
   }
 
   button:hover {
-   background-color: #fc3a51;
+   background-color: #ce5765;
   }
 
   p{
@@ -59,8 +59,15 @@ body {
 
   #session{
     background-color: #0e2430;
-    color: #f5b349;
+    color: #e6b15a;
     padding: 2rem;
     margin-bottom: 1rem;
     font-size: 2rem;
   }
+
+  /* Para pantallas pequeñas */
+@media (max-width: 600px) {
+  .length-control-wrapper {
+    display: inline-block;
+  }  
+}
