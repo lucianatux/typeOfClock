@@ -1,10 +1,10 @@
 function App(){
     return <div className="main-wrapper">
-        <div className="title-wrapper">
-                <h2 id="title">Clock</h2>
-                <i className="fa fa-clock-o"></i>
-        </div>
         <div className="wrapper">
+            <div className="title-wrapper">
+                    <h1 id="title">Clock</h1>
+                    <i className="fa fa-clock-o clock"></i>
+            </div>
             <div className="length-control-wrapper">
                 <div className="break length-control">
                     <div id="break-label">Break Label</div>
@@ -32,8 +32,10 @@ function App(){
                 </div>
             </div>
             <div className="timer-wrapper">
-                <div id="timer-label">Session</div>
-                <div id="time-left">11:11</div>
+                <div id="session">
+                    <div id="timer-label">Session</div>
+                    <div id="time-left">11:11</div>
+                </div>
                 <div className="timer-control">
                     <button id="start_stop">
                         <i className="fa fa-play fa-2x"></i>
@@ -46,6 +48,7 @@ function App(){
             </div>
             
         </div>
+        <p>by LuSCC</p>
     </div>
 }
 
