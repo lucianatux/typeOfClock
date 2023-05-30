@@ -1,16 +1,12 @@
 function App(){
 
-    // Agrega un estado para el valor de "break-length" y "session-length"
   const [breakLength, setBreakLength] = React.useState(5);
   const [sessionLength, setSessionLength] = React.useState(25);
-  
-  // Agrega un estado para el tiempo restante
   const [timeLeft, setTimeLeft] = React.useState(25 * 60);
-
   const [timerRunning, setTimerRunning] = React.useState(false);
   const timerRef = React.useRef(null);
-
   const [timerLabel, setTimerLabel] = React.useState("Session");
+  const audioRef = React.useRef(null);
 
   React.useEffect(() => {
     if (timerRunning) {
@@ -46,12 +42,19 @@ function App(){
   
   // Controlador de evento para el botón de reset
   const handleReset = () => {
-    clearInterval(timerRef.current);
+    // Stop and rewind the audio
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+    // Reset other states and values
     setBreakLength(5);
     setSessionLength(25);
     setTimeLeft(25 * 60);
+    setTimerLabel("Session");
     setTimerRunning(false);
   };
+  
 
   const handleBreakDecrement = () => {
     if (breakLength > 1 && !timerRunning) {
@@ -144,7 +147,7 @@ function App(){
             </div>
             
         </div>
-        <audio id="beep" preload="auto" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
+        <audio id="beep" ref={audioRef} src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
         <p>by LuSCC</p>
     </div>
 }
